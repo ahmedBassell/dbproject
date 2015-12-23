@@ -8,7 +8,7 @@ class Professor_model extends DatabaseConnect
 	}
 	public function get_professors()
 	{	
-		$sql = "SELECT * FROM employee Where type=0"; 
+		$sql = "SELECT * FROM employee Where employee_type=0"; 
 		$result = $this->db->query($sql);
 		return $this->result( $result );
 	}

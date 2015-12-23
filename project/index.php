@@ -6,8 +6,8 @@
 $class = '';
 $method = '';
 
-$default_class  = "getProfs";
-$default_method = "profs";
+$default_class  = "hello";
+$default_method = "index";
 
 
 

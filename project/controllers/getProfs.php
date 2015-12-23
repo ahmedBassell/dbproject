@@ -1,5 +1,5 @@
 <?php
-class getPRofs
+class getProfs
 {
 	
 	public function profs()
@@ -13,5 +13,3 @@ class getPRofs
 	}
 
 }
-
->
