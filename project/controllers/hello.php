@@ -1,9 +1,11 @@
 <?php
 class hello
 {
+
+	var $bu = "http://localhost/college/db/project/index.php/";
 	public function index()
-	{
-		echo "hello world!";
+	{	
+		include('views/hello.php');
 	}
 	// example function for calling model and calling view
 	public function employees()
@@ -14,5 +16,11 @@ class hello
 		$employees = $emp->get_employees();
 		require('views/employees.php');
 		
+	}
+	public function base_url($segment)
+	{
+		$base_url = $this->bu;
+		$url = $base_url.$segment;
+		return $url;
 	}
 }
