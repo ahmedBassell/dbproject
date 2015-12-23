@@ -1,7 +1,7 @@
 <?PHP
 
-foreach($tas as $ta)
+foreach($alltas as $ta)
 {
-	echo ta['name'];
+	echo $ta['name'];
 }
 ?>
