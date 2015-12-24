@@ -115,7 +115,7 @@
             <li><a href="#">Doctors</a></li>
             <li><a href="#">Courses</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="<?php echo $this->base_url('student/logout'); ?>">Logout</a></li>
           </ul>
         </nav>
       </div>

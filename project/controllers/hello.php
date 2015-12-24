@@ -1,8 +1,8 @@
 <?php
-class hello
+require('config/controller.php');
+class hello extends controller
 {
 
-	var $bu = "http://localhost/college/db/project/index.php/";
 	public function index()
 	{	
 		include('views/hello.php');
@@ -16,11 +16,5 @@ class hello
 		$employees = $emp->get_employees();
 		require('views/employees.php');
 		
-	}
-	public function base_url($segment)
-	{
-		$base_url = $this->bu;
-		$url = $base_url.$segment;
-		return $url;
 	}
 }

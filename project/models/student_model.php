@@ -19,6 +19,14 @@ class student_model extends DatabaseConnect
 		return $result;
 	}
 
+	public function login($student)
+	{
+		$sql  = "SELECT * FROM student WHERE email = '{$student->email}' AND password = '{$student->password}'";
+		$result = $this->db->query($sql);
+		$result = $this->result($result);
+		return $result;
+	}
+
 	public function get_student($student_id)
 	{
 		$sql  = "SELECT * FROM student WHERE id = {$student_id}";

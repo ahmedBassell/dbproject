@@ -1,12 +1,8 @@
 <?php
-class student
+require('config/controller.php');
+class student extends controller
 {
 
-	var $bu = "http://localhost/college/db/project/index.php/";
-	public function index()
-	{
-		
-	}
 	public function signup()
 	{
 		// get posted data
@@ -34,22 +30,57 @@ class student
 		
 	}
 
-
-	public function base_url($segment)
+	public function login()
 	{
-		$base_url = $this->bu;
-		$url = $base_url.$segment;
-		return $url;
+		// get posted data
+		$student = new stdClass;
+		$student->email		= $_POST['s_email'];
+		$student->password 	= $_POST['s_password'];
+
+		include('models/student_model.php');
+		$student_model = new student_model();
+		// login
+		$student =  $student_model->login($student) ;
+		$student =  array_shift($student);
+		$student = (object) $student;
+		if( $student )
+		{
+			$_SESSION['student_id'] = $student->id;
+			header('Location: '.$this->base_url('student/home'));
+		}
+		else
+		{
+			header('Location: '.$this->base_url());	
+		}
 	}
+	public function logout()
+	{
+		// remove and destroy session variables
+		session_unset(); 
+		session_destroy(); 
+		header('Location: '.$this->base_url());
+	}
+
+	
 
 
 
 	// private
 	public function home()
 	{
-		$student_id = $_SESSION['student_id'] ;
-		$student = (object) array_shift( $this->get_student($student_id) );
-		include('views/home.php');
+		if(isset( $_SESSION['student_id'] ))
+		{
+			$student_id = $_SESSION['student_id'] ;
+			$student = $this->get_student($student_id);
+			$student =  array_shift($student);
+			$student = (object) $student;
+			include('views/home.php');	
+		}
+		else
+		{
+			header('Location: '.$this->base_url());
+		}
+		
 	}
 	private function get_student($student_id)
 	{
@@ -57,4 +88,5 @@ class student
 		$student_model = new student_model();
 		return $student_model->get_student($student_id);
 	}
+
 }
