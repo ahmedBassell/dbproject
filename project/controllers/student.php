@@ -1,18 +1,8 @@
 <?php
-class student
+require('config/controller.php');
+class student extends controller
 {
 
-	var $bu = "http://localhost/college/db/project/index.php/";
-	public function index()
-	{
-		
-	}
-	public function base_url($segment)
-	{
-		$base_url = $this->bu;
-		$url = $base_url.$segment;
-		return $url;
-	}
 	public function signup()
 	{
 		// get posted data
