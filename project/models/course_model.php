@@ -17,7 +17,8 @@ class course_model extends DatabaseConnect
 	
 	public function get_my_courses($my_id)
 	{
-		$sql ="select * from student_course where student_id = {smy_id}";
+		$sql ="SELECT * FROM student_course, course WHERE student_course.course_id = course.id AND student_course.student_id = {$my_id}";
+		//var_dump($sql);
 		$result = $this->db->query($sql);
 		return $this->result( $result );
 	}

@@ -1,6 +1,6 @@
 <?PHP
-
-class department
+require('config/controller.php');
+class department extends controller
 {
 	public function departments()
 	{

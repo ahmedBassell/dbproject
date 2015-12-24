@@ -1,6 +1,6 @@
 <?PHP
-
-class course
+require('config/controller.php');
+class course extends controller
 {
 	public function courses()
 	{

@@ -114,7 +114,7 @@
             <li><a href="<?php echo $this->base_url('department/departments'); ?>">Deparments</a></li>
             <li><a href="<?php echo $this->base_url('getProfs/profs'); ?>">Doctors</a></li>
             <li><a href="<?php echo $this->base_url('course/courses'); ?>">Courses</a></li>
-            <li><a href="<?php echo $this->base_url('course/my_courses'); ?>">My Course</a></li>
+            <li><a href="<?php echo $this->base_url('course/my_courses'); ?>">My Courses</a></li>
             <li><a href="<?php echo $this->base_url('student/logout'); ?>">Logout</a></li>
           </ul>
         </nav>
