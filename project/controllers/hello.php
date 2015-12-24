@@ -4,8 +4,7 @@ class hello
 
 	var $bu = "http://localhost/college/db/project/index.php/";
 	public function index()
-	{
-		echo $this->base_url;	
+	{	
 		include('views/hello.php');
 	}
 	// example function for calling model and calling view
