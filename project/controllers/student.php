@@ -22,7 +22,14 @@ class student
 		// submit data
 		include('models/student_model.php');
 		$student_model = new student_model();
-		$student_model->submit($student);
+		if($student_model->signup($student))
+		{
+			include('views/home.php');
+		}
+		else
+		{
+			include('views/errors/mysql_error.php');
+		}
 		
 	}
 	public function base_url($segment)

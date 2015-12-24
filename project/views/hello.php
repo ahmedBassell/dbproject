@@ -73,11 +73,11 @@
 			  	<label for="inputDep" class="col-sm-2 control-label">Department</label>
 			  	<div class="col-sm-10">
 				  	<select class="form-control" name="s_dep">
-					  <option value="0">Computer Systems</option>
-					  <option value="1">Communications</option>
-					  <option value="2">Power</option>
-					  <option value="3">Civil</option>
-					  <option value="4">Archetecture</option>
+					  <option value="1">Computer Systems</option>
+					  <option value="2">Communications</option>
+					  <option value="3">Power</option>
+					  <option value="4">Civil</option>
+					  <option value="5">Archetecture</option>
 					</select>
 				</div>
 			  </div>
@@ -96,11 +96,11 @@
 			 	<div class="form-group">
 			 		<label for="inputGrad" class="col-sm-2 control-label">ARE YOU </label>
 			 		<div class="col-sm-10">
-			 			<label class="radio-inline">
-						  <input type="radio" name="s_grad" id="inlineRadio1" value="0"> Graduate
+						<label class="radio-inline">
+						  <input type="radio" name="s_grad" id="inlineRadio2" value="0"> Under Graduate
 						</label>
 						<label class="radio-inline">
-						  <input type="radio" name="s_grad" id="inlineRadio2" value="1"> Under Graduate
+						  <input type="radio" name="s_grad" id="inlineRadio1" value="1"> Graduate
 						</label>
 					 	</div>
 			 		</div>
