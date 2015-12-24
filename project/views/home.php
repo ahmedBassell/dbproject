@@ -111,9 +111,9 @@
         <nav>
           <ul class="nav nav-justified">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Deparments</a></li>
-            <li><a href="#">Doctors</a></li>
-            <li><a href="#">Courses</a></li>
+            <li><a href="<?php echo $this->base_url('department/departments'); ?>">Deparments</a></li>
+            <li><a href="<?php echo $this->base_url('getProfs/profs'); ?>">Doctors</a></li>
+            <li><a href="<?php echo $this->base_url('course/courses'); ?>">Courses</a></li>
             <li><a href="#">About</a></li>
             <li><a href="<?php echo $this->base_url('student/logout'); ?>">Logout</a></li>
           </ul>
