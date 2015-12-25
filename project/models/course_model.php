@@ -35,11 +35,30 @@ class course_model extends DatabaseConnect
 	}
 	public function insert_student_course($student_id, $course_id)
 	{
-		$sql  = "INSERT INTO student_course (student_id, course_id, year, create_time, update_time)";
-		$sql .=	" VALUES ('{$student_id}', '{$course_id}', '2016', ";
-		$sql .=	" '".date('Y-m-d H:i:s')."', '".date('Y-m-d H:i:s')."') ";
-		$result = $this->db->query($sql);
+		$result=false;
+		if(!$this->Found($student_id,$course_id))
+		{
+			$sql  = "INSERT INTO student_course (student_id, course_id, year, create_time, update_time)";
+			$sql .=	" VALUES ('{$student_id}', '{$course_id}', '2016', ";
+			$sql .=	" '".date('Y-m-d H:i:s')."', '".date('Y-m-d H:i:s')."') ";
+			$result = $this->db->query($sql);
+		}
+		else
+		{
+			echo "can't add the same course twice,stupid";
+		}
 		return $result;
+	}
+	public function Found($student_id,$course_id)
+	{
+		$courses=$this->get_student_courses($student_id);
+		foreach($courses as $course)
+		{
+			if($course_id==$course['id'])
+				return true;
+		}
+		return false;
+
 	}
 }
 ?>
