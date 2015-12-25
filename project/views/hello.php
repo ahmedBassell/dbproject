@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Project</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="views/assets/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="<?php echo substr($this->base_url(''), 0, strlen($this->base_url())-10).'views/assets/css/bootstrap.min.css';?>" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="views/assets/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link rel="stylesheet" href="<?php echo substr($this->base_url(''), 0, strlen($this->base_url())-10).'views/assets/css/bootstrap-theme.min.css';?>" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	<style>
 	</style>
 </head>
@@ -126,7 +126,7 @@
 		</div>
 	</div>
 </body>
-<script src="views/assets/js/jquery.js"></script>
+<script src="<?php echo substr($this->base_url(''), 0, strlen($this->base_url())-10).'views/assets/js/jquery.js';?>"></script>
 <script>
 	$(document).ready(function(){
 		$(".user_form").hide();
