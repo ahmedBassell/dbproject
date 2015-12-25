@@ -1,7 +1,7 @@
 <?PHP
-class ta
+require('config/controller.php');
+class ta extends controller
 {
-	
 	public function tas()
 	{
 		require('models/ta_model.php');

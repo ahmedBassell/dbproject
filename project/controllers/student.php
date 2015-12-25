@@ -74,13 +74,25 @@ class student extends controller
 			$student = $this->get_student($student_id);
 			$student =  array_shift($student);
 			$student = (object) $student;
-			include('views/home.php');	
+			include('models/student_model.php');
+			// $depts = $this->get_departments();
+			// var_dump($depts);
+			// include('views/home.php');	
 		}
 		else
 		{
 			header('Location: '.$this->base_url());
 		}
 		
+	}
+	public function get_departments()
+	{
+		// echo getcwd();
+		
+		// $dept=new department_model();
+		// $alldepts=$dept->getalldepts();
+		// var_dump($depts);
+		// return $alldepts;
 	}
 	private function get_student($student_id)
 	{

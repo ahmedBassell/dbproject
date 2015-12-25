@@ -111,10 +111,10 @@
         <nav>
           <ul class="nav nav-justified">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Deparments</a></li>
-            <li><a href="#">Doctors</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="<?php echo $this->base_url('department/departments'); ?>">Deparments</a></li>
+            <li><a href="<?php echo $this->base_url('getProfs/profs'); ?>">Doctors</a></li>
+            <li><a href="<?php echo $this->base_url('course/courses'); ?>">Courses</a></li>
+            <li><a href="<?php echo $this->base_url('course/my_courses'); ?>">My Courses</a></li>
             <li><a href="<?php echo $this->base_url('student/logout'); ?>">Logout</a></li>
           </ul>
         </nav>
@@ -124,37 +124,39 @@
       <div class="jumbotron">
         <h1>College DB Project!</h1>
         <p class="lead">9 Tables, Alot of Foreign Keys, 4 branches, much work such development WOW!</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Request Course</a></p>
       </div>
 
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-lg-4">
           <h2>Degrees</h2>
-          <p class="text-danger">As of v8.0, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <!-- <p class="text-danger">As of v8.0, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p> -->
+          <!-- <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p> -->
           <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-lg-4">
           <h2>Departments</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <ul class="list-group">
+            <?php foreach ($depts as $dep): ?>
+              <li class="list-group-item">Cras justo odio</li>
+            <?php endforeach;?>
+          </ul>
+          <!-- <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p> -->
           <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
        </div>
         <div class="col-lg-4">
           <h2>Courses</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+          <!-- <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p> -->
           <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
 
       <!-- Site footer -->
       <footer class="footer">
-        <p>&copy; 2015 Company, Inc.</p>
+        <p>&copy; 2015 DB Project</p>
       </footer>
 
     </div> <!-- /container -->
-
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 </body>
 </html>
