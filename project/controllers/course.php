@@ -7,6 +7,7 @@ class course extends controller
 		require('models/course_model.php');
 		$course=new course_model();
 		$allcourses=$course->getallcourses();
+		$my_courses=$course->get_student_courses($_SESSION['student_id']);
 		include('views/courses.php');
 	}
 	
@@ -42,6 +43,7 @@ class course extends controller
 		if($accept)
 		{
 			$course_model->insert_student_course($student_id, $course_id);
+			header('Location: '.$this->base_url('course/courses'));
 		}
 		else
 		{
