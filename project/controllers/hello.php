@@ -17,4 +17,8 @@ class hello extends controller
 		require('views/employees.php');
 		
 	}
+	public function number($value='0')
+	{
+		echo $value;
+	}
 }

@@ -87,7 +87,7 @@ $default_method = "index";
 
 		include_once('controllers/'.$class.'.php');
 		$c = new $class();
-		call_user_func_array(array(&$c, $method),  array());
+		call_user_func_array(array(&$c, $method),  array_slice($x, 2) );
 	}
 
 
