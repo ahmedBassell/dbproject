@@ -146,7 +146,7 @@
             <?php endforeach;?>
           </ul>
           <!-- <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p> -->
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-primary" href="<?php echo $this->base_url('department/departments'); ?>" role="button">View details &raquo;</a></p>
        </div>
         <div class="col-lg-4">
           <h2>Courses</h2>
@@ -154,7 +154,7 @@
               <li class="list-group-item"><?php echo $course['name'];?></li>
             <?php endforeach;?>
           <!-- <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p> -->
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-primary" href="<?php echo $this->base_url('course/courses'); ?>" role="button">View details &raquo;</a></p>
         </div>
       </div>
 
