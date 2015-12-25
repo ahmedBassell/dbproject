@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title><?php echo ucfirst( $student->name ) ;?></title>
+	<title>MY Courses</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -107,56 +107,26 @@
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-        <h3 class="text-muted"><?php echo ucfirst($student->name);?></h3>
+        <h3 class="text-muted">Course Pre-requisites</h3>
         <nav>
           <ul class="nav nav-justified">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="<?php echo $this->base_url('department/departments'); ?>">Deparments</a></li>
-            <li><a href="<?php echo $this->base_url('getProfs/profs'); ?>">Doctors</a></li>
-            <li><a href="<?php echo $this->base_url('course/courses'); ?>">Courses</a></li>
-            <li><a href="<?php echo $this->base_url('course/my_courses'); ?>">My Courses</a></li>
+            <li class=""><a href="<?php echo $this->base_url(''); ?>">Home</a></li>
+            <li class=""><a href="<?php echo $this->base_url('department/departments'); ?>">Departments</a></li>
+            <li class=""><a href="<?php echo $this->base_url('getProfs/profs'); ?>">Doctors</a></li>
+            <li class="active"><a href="<?php echo $this->base_url('course/courses'); ?>">Courses</a></li>
+            <li class=""><a href="<?php echo $this->base_url('course/my_courses'); ?>">My Courses</a></li>
             <li><a href="<?php echo $this->base_url('student/logout'); ?>">Logout</a></li>
           </ul>
         </nav>
       </div>
-
-      <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1>College DB Project!</h1>
-        <p class="lead">9 Tables, Alot of Foreign Keys, 5 branches, 42 commits, much work such development WOW!</p>
-        <p><a class="btn btn-lg btn-success" href="<?php echo $this->base_url('course/courses'); ?>" role="button">Request Course</a></p>
-      </div>
-
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg-4">
-          <h2>Degrees</h2>
-            <?php foreach ($degrees as $degree): ?>
-              <li class="list-group-item"><?php echo $degree['year']." : ".$degree['year_degree'];?></li>
-            <?php endforeach;?>
-          <!-- <p class="text-danger">As of v8.0, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p> -->
-          <!-- <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p> -->
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <h2>Departments</h2>
-          <ul class="list-group">
-            <?php foreach ($depts as $dep): ?>
-              <li class="list-group-item"><?php echo $dep['name'];?></li>
-            <?php endforeach;?>
-          </ul>
-          <!-- <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p> -->
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-lg-4">
-          <h2>Courses</h2>
-            <?php foreach ($courses as $course): ?>
-              <li class="list-group-item"><?php echo $course['name'];?></li>
-            <?php endforeach;?>
-          <!-- <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p> -->
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
+	<h2>The Course You Requested Require Those Courses First</h2>
+  <ul class="list-group">
+        <?php foreach($preCourses as $preC):?>
+          	<li class="list-group-item">
+	          	<?php echo $preC['name'];?>
+				</li>
+        <?php endforeach;?>
+  </ul>
 
       <!-- Site footer -->
       <footer class="footer">
