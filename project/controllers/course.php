@@ -14,7 +14,7 @@ class course extends controller
 	{
 		require('models/course_model.php');
 		$course=new course_model();
-		$my_courses=$course->getallcourses($_SESSION['student_id']);
+		$my_courses=$course->get_student_courses($_SESSION['student_id']);
 		include('views/my_courses.php');
 	}
         public function coursespreq()
@@ -24,6 +24,50 @@ class course extends controller
 		$allpreq=$course->getallpreq($_SESSION['student_id']);
 		include('views/courses.php');
 	}
+
+	public function request_course($course_id)
+	{
+		require_once('models/course_model.php');
+		$course_model = new course_model();
+
+		$student_id = $_SESSION['student_id'];
+		// student courses
+		$courses		=$course_model->get_student_courses($student_id);
+		// cuorse prerequesites
+		$preCourses	=$course_model->get_course_prerequisites($course_id);
+		var_dump($courses);
+		var_dump($preCourses);
+
+		$accept = $this->check($preCourses, $courses);
+		if($accept)
+		{
+			$course_model->insert_student_course($student_id, $course_id);
+		}
+		else
+		{
+			echo "can't";
+		}
+	}
 	
+	private function check($PreCours,$Cours)
+	{
+		
+		foreach($PreCours as $row1)
+		{
+			$has_preq = FALSE;
+			foreach($Cours as $row2)
+			{
+				if($row1['id']==$row2['id'])
+				{
+					$has_preq = TRUE;break;
+				}	
+			}
+			if(!$has_preq)
+			{
+				return FALSE;
+			}
+		}
+		return TRUE;
+	}
 }
 ?>
