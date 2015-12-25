@@ -36,9 +36,7 @@ class course extends controller
 		$courses		=$course_model->get_student_courses($student_id);
 		// cuorse prerequesites
 		$preCourses	=$course_model->get_course_prerequisites($course_id);
-		var_dump($courses);
-		var_dump($preCourses);
-
+		
 		$accept = $this->check($preCourses, $courses);
 		if($accept)
 		{
@@ -47,7 +45,7 @@ class course extends controller
 		}
 		else
 		{
-			echo "can't";
+			require_once('views/course_prequisites.php');
 		}
 	}
 	

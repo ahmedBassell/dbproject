@@ -22,7 +22,7 @@ class course_model extends DatabaseConnect
 	}
 	public function get_course_prerequisites($course_id)
 	{
-		$sql = "SELECT course.id FROM course_prerequisite, course WHERE course.id = course_prerequisite.prerequisited_course AND course_prerequisite.course_id = {$course_id} ";
+		$sql = "SELECT course.id, course.name FROM course_prerequisite, course WHERE course.id = course_prerequisite.prerequisited_course AND course_prerequisite.course_id = {$course_id} ";
 		$result = $this->db->query($sql);
 		return $this->result( $result );
 	}
