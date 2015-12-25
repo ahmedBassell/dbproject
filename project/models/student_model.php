@@ -1,5 +1,5 @@
 <?php
-require ('models/config/db_config.php');
+require_once ('models/config/db_config.php');
 
 class student_model extends DatabaseConnect
 {
@@ -30,6 +30,14 @@ class student_model extends DatabaseConnect
 	public function get_student($student_id)
 	{
 		$sql  = "SELECT * FROM student WHERE id = {$student_id}";
+		$result = $this->db->query($sql);
+		$result = $this->result($result);
+		return $result;
+	}
+
+	public function get_my_degrees($student_id)
+	{
+		$sql  = "SELECT * FROM student_degree WHERE student_id = {$student_id}";
 		$result = $this->db->query($sql);
 		$result = $this->result($result);
 		return $result;

@@ -131,6 +131,9 @@
       <div class="row">
         <div class="col-lg-4">
           <h2>Degrees</h2>
+            <?php foreach ($degrees as $degree): ?>
+              <li class="list-group-item"><?php echo $degree['year']." : ".$degree['year_degree'];?></li>
+            <?php endforeach;?>
           <!-- <p class="text-danger">As of v8.0, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p> -->
           <!-- <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p> -->
           <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
@@ -139,7 +142,7 @@
           <h2>Departments</h2>
           <ul class="list-group">
             <?php foreach ($depts as $dep): ?>
-              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item"><?php echo $dep['name'];?></li>
             <?php endforeach;?>
           </ul>
           <!-- <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p> -->
@@ -147,6 +150,9 @@
        </div>
         <div class="col-lg-4">
           <h2>Courses</h2>
+            <?php foreach ($courses as $course): ?>
+              <li class="list-group-item"><?php echo $course['name'];?></li>
+            <?php endforeach;?>
           <!-- <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p> -->
           <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
         </div>

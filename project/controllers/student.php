@@ -1,5 +1,5 @@
 <?php
-require('config/controller.php');
+require_once('config/controller.php');
 class student extends controller
 {
 
@@ -74,10 +74,13 @@ class student extends controller
 			$student = $this->get_student($student_id);
 			$student =  array_shift($student);
 			$student = (object) $student;
-			include('models/student_model.php');
-			// $depts = $this->get_departments();
+			
+			//  getting data for display in view
+			$depts 		= $this->get_departments();
+			$courses 	= $this->get_courses();
+			$degrees 	= $this->get_my_degrees();
 			// var_dump($depts);
-			// include('views/home.php');	
+			include('views/home.php');	
 		}
 		else
 		{
@@ -85,18 +88,31 @@ class student extends controller
 		}
 		
 	}
-	public function get_departments()
+	private function get_my_degrees()
 	{
-		// echo getcwd();
-		
-		// $dept=new department_model();
-		// $alldepts=$dept->getalldepts();
-		// var_dump($depts);
-		// return $alldepts;
+		require_once('models/student_model.php');
+		$student_model = new student_model();
+		$student_id = $_SESSION['student_id'];
+		$degrees = $student_model->get_my_degrees($student_id);
+		return $degrees;
+	}
+	private function get_departments()
+	{
+		require_once('models/department_model.php');
+		$dept=new department_model();
+		$alldepts=$dept->getalldepts();
+		return $alldepts;
+	}
+	private function get_courses()
+	{
+		require_once('models/course_model.php');
+		$course_model=new course_model();
+		$courses=$course_model->getallcourses();
+		return $courses;
 	}
 	private function get_student($student_id)
 	{
-		include('models/student_model.php');
+		require_once('models/student_model.php');
 		$student_model = new student_model();
 		return $student_model->get_student($student_id);
 	}

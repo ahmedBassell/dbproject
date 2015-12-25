@@ -1,5 +1,5 @@
 <?php
-require ('models/config/db_config.php');
+require_once ('models/config/db_config.php');
 class Professor_model extends DatabaseConnect
 {
 	function __construct()

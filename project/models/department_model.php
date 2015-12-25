@@ -1,5 +1,5 @@
 <?PHP
-require ('models/config/db_config.php');
+require_once ('models/config/db_config.php');
 
 class department_model extends DatabaseConnect
 {
