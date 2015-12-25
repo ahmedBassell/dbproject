@@ -1,5 +1,5 @@
 <?php
-require ('models/config/db_config.php');
+require_once ('models/config/db_config.php');
 
 class employee_model extends DatabaseConnect
 {
