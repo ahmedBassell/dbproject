@@ -16,7 +16,7 @@ class course_model extends DatabaseConnect
 	}
         public function getallpreq()
 	{
-		$sql = "SELECT * FROM course";
+		$sql = "SELECT * FROM student";
 		$result = $this->db->query($sql);
 		return $this->result( $result );
 	}
