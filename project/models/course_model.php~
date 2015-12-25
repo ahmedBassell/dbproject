@@ -14,9 +14,9 @@ class course_model extends DatabaseConnect
 		$result = $this->db->query($sql);
 		return $this->result( $result );
 	}
-        public function getallpreq($id)
+        public function getallpreq()
 	{     
-		$sql = "SELECT * FROM `course` WHERE `id` IN (SELECT `prerequisited_course` FROM `course_prerequisite` WHERE `course_id` ={$id})";
+		$sql = "SELECT * FROM `course` WHERE `id` IN (SELECT `prerequisited_course` FROM `course_prerequisite` WHERE `course_id` =1)";
 		$result = $this->db->query($sql);
 		return $this->result( $result );
 

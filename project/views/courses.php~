@@ -7,7 +7,7 @@ foreach($allcourses as $course)
 }
  foreach($allpreq as $course_prerequisite)
 {
-	echo $course_prerequisite['name']."<br/>";
+	echo $course_prerequisite['prerequisited_course']."<br/>";
 
 }
 

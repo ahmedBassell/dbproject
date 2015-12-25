@@ -21,7 +21,7 @@ class course extends controller
 	{
 		require('models/course_model.php');
 		$course=new course_model();
-		$allpreq=$course->getallpreq($_SESSION['student_id']);
+		$allpreq=$course->getallpreq();
 		include('views/courses.php');
 	}
 	

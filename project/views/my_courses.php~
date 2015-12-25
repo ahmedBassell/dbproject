@@ -2,6 +2,6 @@
 
 foreach($my_courses as $course)
 {
-	echo $course['name']."<br/>";
+	echo $course['name'];
 }
 ?>
