@@ -1,16 +1,16 @@
-<?php
+<?PHP
 require_once ('models/config/db_config.php');
 
-class employee_model extends DatabaseConnect
+class department_model extends DatabaseConnect
 {
 	function __construct()
 	{
 		parent::__construct();
 	}
-
-	public function get_employees()
-	{	
-		$sql = "SELECT * FROM employee";
+	
+	public function getalldepts()
+	{
+		$sql = "SELECT * FROM department";
 		$result = $this->db->query($sql);
 		return $this->result( $result );
 	}

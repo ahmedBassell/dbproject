@@ -1,13 +1,13 @@
 <?php 
-
+session_start();
 
 
 
 $class = '';
 $method = '';
 
-$default_class  = "getProfs";
-$default_method = "profs";
+$default_class  = "hello";
+$default_method = "index";
 
 
 
@@ -87,7 +87,7 @@ $default_method = "profs";
 
 		include_once('controllers/'.$class.'.php');
 		$c = new $class();
-		call_user_func_array(array(&$c, $method),  array());
+		call_user_func_array(array(&$c, $method),  array_slice($x, 2) );
 	}
 
 

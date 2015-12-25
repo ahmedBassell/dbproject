@@ -1,10 +1,11 @@
 <?php
-require('config/controller.php');
-class hello extends controller
+class x
 {
 
+	var $bu = "http://localhost/college/db/project/index.php/";
 	public function index()
-	{	
+	{
+		echo $this->base_url;	
 		include('views/hello.php');
 	}
 	// example function for calling model and calling view
@@ -17,8 +18,15 @@ class hello extends controller
 		require('views/employees.php');
 		
 	}
-	public function number($value='0')
+	public function base_url($segment)
 	{
-		echo $value;
+		$base_url = $this->bu;
+		$url = $base_url.$segment;
+		return $url;
+	}
+       public function start ()
+	{        
+                $x = "Hello maha";
+		echo $x;
 	}
 }
